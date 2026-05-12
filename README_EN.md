@@ -37,3 +37,8 @@ cp -r ftdetect/ ~/.vim/ftdetect/
 | `syntax/popline.vim` | Syntax rules |
 | `ftdetect/popline.vim` | File type detection |
 | `ftplugin/popline.vim` | File type settings |
+
+## Acknowledgments
+This project was developed with the assistance of:
+- [Claude Code](https://claude.ai) (Anthropic)
+- [DeepSeek](https://deepseek.com) (DeepSeek)

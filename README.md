@@ -37,3 +37,8 @@ cp -r ftdetect/ ~/.vim/ftdetect/
 | `syntax/popline.vim` | 语法规则 |
 | `ftdetect/popline.vim` | 文件类型检测 |
 | `ftplugin/popline.vim` | 文件类型设置 |
+
+## 致谢
+本项目的开发得到了以下 AI 工具的大力协助：
+- [Claude Code](https://claude.ai)（Anthropic）
+- [DeepSeek](https://deepseek.com)（深度求索）
