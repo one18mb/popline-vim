@@ -26,7 +26,7 @@ cp -r ftdetect/ ~/.vim/ftdetect/
 ## Features
 
 - Syntax highlighting (keys, strings, numbers, booleans, null, comments)
-- `N ` pop prefix highlighting
+- ` N` pop suffix highlighting
 - Container markers `{` `[` highlighting
 - Automatic file type detection (`.pln`)
 

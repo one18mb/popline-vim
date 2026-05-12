@@ -1,4 +1,4 @@
-" PopLine syntax file for Vim/Neovim
+" PopLine v0.2.0 syntax file for Vim/Neovim
 " Language: PopLine (.pln)
 " Maintainer: one18mb
 
@@ -9,34 +9,30 @@ endif
 " Comments: # to end of line
 syn match poplineComment "#.*$" contains=@Spell
 
-" Pop prefix: N  at line start
-syn match poplinePopPrefix "^\d\+ " contained
-
-" Braces and brackets at line start (containers)
-syn match poplineContainerOpener "^{" contained
-syn match poplineContainerOpener "^\[" contained
-
 " Keys: text before :  separator
-syn match poplineKey "^\S[^:]*\ze: " contains=poplinePopPrefix
+syn match poplineKey "^\S[^:]*\ze: "
 
-" Strings: double-quoted
-syn region poplineString start='"' end='"' contains=poplineEscape
+" Strings: double-quoted (multi-line aware)
+syn region poplineString start='"' end='"' contains=poplineEscape nextgroup=poplinePopSuffix skipwhite
 syn match poplineEscape '""' contained
 
 " Keywords
-syn keyword poplineBoolean true false
-syn keyword poplineNull null
+syn keyword poplineBoolean true false nextgroup=poplinePopSuffix skipwhite
+syn keyword poplineNull null nextgroup=poplinePopSuffix skipwhite
 
 " Numbers
-syn match poplineNumber "\<-\?\d\+\.\d*\([eE][+-]\?\d\+\)\?\>"
-syn match poplineNumber "\<-\?\d\+[eE][+-]\?\d\+\>"
-syn match poplineNumber "\<-\?\(0\|[1-9]\d*\)\>"
+syn match poplineNumber "\<-\?\d\+\.\d*\([eE][+-]\?\d\+\)\?\>" nextgroup=poplinePopSuffix skipwhite
+syn match poplineNumber "\<-\?\d\+[eE][+-]\?\d\+\>" nextgroup=poplinePopSuffix skipwhite
+syn match poplineNumber "\<-\?\(0\|[1-9]\d*\)\>" nextgroup=poplinePopSuffix skipwhite
 
-" Container closing markers in value context
-syn match poplineContainerOpener "[\[{]" contained
+" Container openers
+syn match poplineContainerOpener "[\[\{]"
+
+" Pop suffix:  N at end of line (after values)
+syn match poplinePopSuffix " \d\+$" contained
 
 hi def link poplineComment        Comment
-hi def link poplinePopPrefix      PreProc
+hi def link poplinePopSuffix      PreProc
 hi def link poplineKey            Identifier
 hi def link poplineString         String
 hi def link poplineEscape         SpecialChar
