@@ -1,4 +1,4 @@
-" PopLine v0.2.0 syntax file for Vim/Neovim
+" PopLine v0.5.0 syntax file for Vim/Neovim
 " Language: PopLine (.pln)
 " Maintainer: one18mb
 
